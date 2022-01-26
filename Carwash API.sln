@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31613.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Carwash API", "Carwash API\Carwash API.csproj", "{5A27DF40-C1B0-4F3B-9D65-70F219FABE8F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5A27DF40-C1B0-4F3B-9D65-70F219FABE8F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A27DF40-C1B0-4F3B-9D65-70F219FABE8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A27DF40-C1B0-4F3B-9D65-70F219FABE8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A27DF40-C1B0-4F3B-9D65-70F219FABE8F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FDE8379A-7BE4-4F9A-89DF-231D3F7BCE1F}
+	EndGlobalSection
+EndGlobal
