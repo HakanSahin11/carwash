@@ -25,8 +25,6 @@ namespace Carwash_API.Models
             public string Subscription { get; set; }
             public string Transactions { get; set; }
             public string TotalAmount { get; set; }
-
-
         }
 
         public class UserModel : IUserModel
@@ -157,13 +155,38 @@ namespace Carwash_API.Models
         }
         public class ApiModel
         {
-            public ApiModel(string json, string tokenId)
+            public ApiModel(string json, string tokenId, string task)
             {
                 Json = json;
                 TokenId = tokenId;
+                Task = task;
             }
             public string Json { get; set; }
             public string TokenId { get; set; }
+            public string Task { get; set; }
         }
+        public class CarwashRunModel : ICarwashRunModel
+        {
+            [BsonId]
+            [BsonRepresentation(BsonType.ObjectId)]
+            public ObjectId Id { get; set; }
+            public string Status { get; set; }
+            public string Numberplate { get; set; }
+            public string UserName { get; set; }
+            public string StartTime { get; set; }
+            public int Carwash { get; set; }
+        }
+        public interface ICarwashRunModel
+        {
+            [BsonId]
+            [BsonRepresentation(BsonType.ObjectId)]
+            ObjectId Id { get; set; }
+            string Status { get; set; }
+            string Numberplate { get; set; }
+            string UserName { get; set; }
+            string StartTime { get; set; }
+            int Carwash { get; set; }
+        }
+
     }
 }

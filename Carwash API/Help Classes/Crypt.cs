@@ -1,10 +1,12 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using static Carwash_API.Models.UserModels;
 
 namespace Carwash_API.Help_Classes
 {
@@ -24,6 +26,9 @@ namespace Carwash_API.Help_Classes
                 };
             }
         }
+
+
+
         public string Encrypter(string json, string salt)
         {
             try
@@ -38,19 +43,23 @@ namespace Carwash_API.Help_Classes
             }
         }
 
-        public string Decrypter(string json, string salt)
+        public async Task<string> Decrypter(string json, string salt)
         {
             try
             {
                 if (salt == null)
                     salt = CryptKey;
-                return Encoding.UTF8.GetString(Decrypt(Convert.FromBase64String(json), salt));
+
+                var result = Encoding.UTF8.GetString(Decrypt(Convert.FromBase64String(json), salt));
+                return await Task.FromResult(result);
             }
             catch
             {
                 throw new Exception("Error Code 5.4 - Error at Helper clases Decryption Error");
             }
         }
+
+
         //Encryption Task, used to encrypt data, using existing salt code
         public byte[] Encrypt(byte[] bytesToEncrypt, string pass)
         {

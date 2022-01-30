@@ -36,6 +36,7 @@ namespace Carwash_API
             services.AddSingleton<UserCrud>();
             services.AddSingleton<LoginCrud>();
             services.AddSingleton<FinancialCrud>();
+            services.AddSingleton<CarwashRunCrud>();
 
             services.AddCors(o => o.AddPolicy("CorsPolicy", builder =>
             {

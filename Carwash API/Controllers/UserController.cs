@@ -113,11 +113,20 @@ namespace Carwash_API.Controllers
         }
         */
         [HttpPost]
-        public ActionResult Create([FromBody] JsonElement jsUser)
+        public ActionResult Create([FromBody] JsonElement json)
         {
             try
             {
-                var decryptedUser = JsonConvert.DeserializeObject<NewUserModel>(jsUser.GetRawText());
+
+                var EncContent = JsonConvert.DeserializeObject<ApiModel>(json.GetRawText());
+                if (EncContent.TokenId != "1666723Dx")
+                    return Ok("Wrong Token");
+
+                Crypt crypt = new Crypt();
+                var DecContent = Task.Run(() => crypt.Decrypter(EncContent.Json, "13334448853")).Result;
+
+
+                var decryptedUser = JsonConvert.DeserializeObject<NewUserModel>(DecContent);
                 if (_users.GetUser(decryptedUser.UserName).Result != null)
                     return BadRequest("UserName already exists!");
 
@@ -129,7 +138,6 @@ namespace Carwash_API.Controllers
 
                 //add encryption of all data, GDPR
 
-                Crypt crypt = new Crypt();
                 var FirstName    = Task.Run(() => crypt.Encrypter(decryptedUser.FirstName, hash.Salt));
                 var LastName     = Task.Run(() => crypt.Encrypter(decryptedUser.LastName,  hash.Salt));
                 var UserType     = Task.Run(() => crypt.Encrypter(decryptedUser.UserType,  hash.Salt));
@@ -148,7 +156,7 @@ namespace Carwash_API.Controllers
                     UserType    = UserType.Result
                 };
 
-                _users.Create(newUser);
+                _users.Create(newUser).Wait();
 
                 var id = _users.GetUserByEmail(newUser.Email).Result.Id;
                 var login = new LoginModel

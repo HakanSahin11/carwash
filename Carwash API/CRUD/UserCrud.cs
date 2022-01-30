@@ -50,7 +50,7 @@ namespace Carwash_API.CRUD
            _users.Find(x => x.Id == id).FirstOrDefault());
 
         //Create new user
-        public async void Create(UserModel user) =>
+        public async Task Create(UserModel user) =>
             await Task.Run(() =>  _users.InsertOne(user));
 
         //Update existing user

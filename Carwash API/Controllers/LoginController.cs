@@ -29,22 +29,26 @@ namespace Carwash_API.Controllers
                 _login.Get().Result;
 
         [HttpPost]
-        public ActionResult LoginConfirm([FromBody] JsonElement LoginJson)
+        public ActionResult LoginConfirm([FromBody] JsonElement json)
         {
 
             try
             {
                 bool loginResult = false;
 
-                //Without crypt
-                var EncContent = JsonConvert.DeserializeObject<ApiModel>(LoginJson.GetRawText());
+
+
+                var EncContent = JsonConvert.DeserializeObject<ApiModel>(json.GetRawText());
                 if (EncContent.TokenId != "1666723Dx")
-                    return BadRequest();
+                    return Ok("Wrong Token");
 
                 Crypt crypt = new Crypt();
-                var DecContent = crypt.Decrypter(EncContent.Json, "13334448853");
+                var DecContent = Task.Run(() => crypt.Decrypter(EncContent.Json, "13334448853")).Result;
+                
+                if (DecContent == "Wrong Token")
+                    return BadRequest();
+                
                 var Content = JsonConvert.DeserializeObject<LoginModel>(DecContent);
-
 
                 LoginModel SavedContent = _login.GetUserByUserName(Content.UserName).Result;
                 if (SavedContent == null)
