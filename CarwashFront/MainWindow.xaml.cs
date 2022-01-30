@@ -32,19 +32,20 @@ namespace CarwashFront
         private void BtnLogin_Click(object sender, RoutedEventArgs e)
         {
             var json = JsonConvert.SerializeObject( new LoginModel(txt_User_or_Email.Text, PW_Pass.Password));
-            var response = SendRequest("POST", json, "Login");
+            var response = SendRequest("POST", json, "Login", null);
             MessageBox.Show(response, "Login", MessageBoxButton.OK);
             if (response == "true")
             {
                 new CarWashView().Show();
-                this.Close();
+                Close();
             }
                 
         }
 
         private void BtnSignup_Click(object sender, RoutedEventArgs e)
         {
-
+            new CreateUser().Show();
+            Close();
         }
 
         

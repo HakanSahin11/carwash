@@ -10,9 +10,15 @@
     <Compile Update="CarWashView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="CreateUser.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="CarWashView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="CreateUser.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MainWindow.xaml">

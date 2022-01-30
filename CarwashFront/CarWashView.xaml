@@ -5,8 +5,134 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CarwashFront"
         mc:Ignorable="d"
-        Title="CarWashView" WindowState="Maximized" WindowStyle="None" Height="500" Width="1000" WindowStartupLocation="CenterScreen">
+        Title="CarWashView" WindowState="Maximized" WindowStyle="None" Height="1080" Width="1920" WindowStartupLocation="CenterScreen">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="10*"/>
+            <ColumnDefinition Width="40*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="40*"/>
+            <ColumnDefinition Width="10*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="15*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="15*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Border BorderThickness="1" BorderBrush="Black" Grid.Row="3" Grid.Column="2">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="3*"/>
+                    <RowDefinition Height="3*"/>
+                    <RowDefinition Height="3*"/>
+                    <RowDefinition Height="3*"/>
+                    <RowDefinition Height="3*"/>
+                </Grid.RowDefinitions>
+                <Label Content="Car Wash 1" VerticalAlignment="Center" HorizontalContentAlignment="Center" FontSize="20" Grid.Row="0" Grid.ColumnSpan="2" FontWeight="DemiBold"/>
+                <Label Content="Status: " FontSize="16" Grid.Column="0" Grid.Row="1"/> 
+                <Label Content="Closed" x:Name="LB_Car_Wash_Status_1" FontSize="16" Grid.Column="1" Grid.Row="1"/>
+                <Label Content="Current Car: " FontSize="16" Grid.Row="2"/>
+                <Label Content="-"  x:Name="Lb_Carwash_CurrentCar_1" FontSize="16" Grid.Row="2" Grid.Column="1"/>
+
+                <Label Content="Time Added: " FontSize="16" Grid.Row="3"/>
+                <Label Content="-"  x:Name="Lb_Carwash_TimeAdded_1" FontSize="16" Grid.Row="3" Grid.Column="1"/>
+
+                <Button x:Name="Btn_Carwash_1_Start" Click="Btn_Carwash_Start_Click" Content="Start" FontWeight="DemiBold" FontSize="14" Grid.Row="4" BorderThickness="2"/>
+                <Button x:Name="Btn_Carwash_1_Sstop" Click="Btn_Carwash_Stop_Click" Content="Stop" FontWeight="DemiBold" FontSize="14" Grid.Row="4" Grid.Column="1" BorderThickness="2" />
+            </Grid>
+        </Border>
+
+        <Border BorderThickness="1" BorderBrush="Black" Grid.Row="5" Grid.Column="2">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="5*"/>
+                    <RowDefinition Height="3*"/>
+                    <RowDefinition Height="3*"/>
+                    <RowDefinition Height="3*"/>
+                    <RowDefinition Height="3*"/>
+                </Grid.RowDefinitions>
+                <Label Content="Car Wash 3" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" Grid.Row="0" Grid.ColumnSpan="2" FontWeight="DemiBold"/>
+                <Label Content="Status: " FontSize="16" Grid.Column="0" Grid.Row="1"/>
+                <Label Content="Closed" x:Name="LB_Car_Wash_Status_3" FontSize="16" Grid.Column="1" Grid.Row="1"/>
+                <Label Content="Current Car: " FontSize="16" Grid.Row="2"/>
+                <Label Content="-"  x:Name="Lb_Carwash_CurrentCar_3" FontSize="16" Grid.Row="2" Grid.Column="1"/>
+
+                <Label Content="Time Added: " FontSize="16" Grid.Row="3"/>
+                <Label Content="-"  x:Name="Lb_Carwash_TimeAdded_3" FontSize="16" Grid.Row="3" Grid.Column="1"/>
+                
+                <Button x:Name="Btn_Carwash_3_Start" Click="Btn_Carwash_Start_Click" Content="Start" FontWeight="DemiBold" FontSize="14" Grid.Row="4" BorderThickness="2"/>
+                <Button x:Name="Btn_Carwash_3_Stop" Click="Btn_Carwash_Stop_Click" Content="Stop" FontWeight="DemiBold" FontSize="14" Grid.Row="4" Grid.Column="1" BorderThickness="2" />
+            </Grid>
+        </Border>
+
+        <Border BorderThickness="1" BorderBrush="Black" Grid.Row="3" Grid.Column="4">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="5*"/>
+                    <RowDefinition Height="3*"/>
+                    <RowDefinition Height="3*"/>
+                    <RowDefinition Height="3*"/>
+                    <RowDefinition Height="3*"/>
+                </Grid.RowDefinitions>
+                <Label Content="Car Wash 2" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" Grid.Row="0" Grid.ColumnSpan="2" FontWeight="DemiBold"/>
+                <Label Content="Status: " FontSize="16" Grid.Column="0" Grid.Row="1"/>
+                <Label Content="Closed" x:Name="LB_Car_Wash_Status_2" FontSize="16" Grid.Column="1" Grid.Row="1"/>
+                <Label Content="Current Car: " FontSize="16" Grid.Row="2"/>
+                <Label Content="-" x:Name="Lb_Carwash_CurrentCar_2" FontSize="16" Grid.Row="2" Grid.Column="1"/>
+
+                <Label Content="Time Added: " FontSize="16" Grid.Row="3"/>
+                <Label Content="-"  x:Name="Lb_Carwash_TimeAdded_2" FontSize="16" Grid.Row="3" Grid.Column="1"/>
+
+                <Button x:Name="Btn_Carwash_2_Start" Click="Btn_Carwash_Start_Click" Content="Start" FontWeight="DemiBold" FontSize="14" Grid.Row="4" BorderThickness="2"/>
+                <Button x:Name="Btn_Carwash_2_Sstop" Click="Btn_Carwash_Stop_Click" Content="Stop" FontWeight="DemiBold" FontSize="14" Grid.Row="4" Grid.Column="1" BorderThickness="2" />
+            </Grid>
+        </Border>
+
+        <Border BorderThickness="1" BorderBrush="Black" Grid.Row="5" Grid.Column="4">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="5*"/>
+                    <RowDefinition Height="3*"/>
+                    <RowDefinition Height="3*"/>
+                    <RowDefinition Height="3*"/>
+                    <RowDefinition Height="3*"/>
+                </Grid.RowDefinitions>
+                <Label Content="Car Wash 4" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" Grid.Row="0" Grid.ColumnSpan="2" FontWeight="DemiBold"/>
+                <Label Content="Status: " FontSize="16" Grid.Column="0" Grid.Row="1"/>
+                <Label Content="Closed" x:Name="LB_Car_Wash_Status_4" FontSize="16" Grid.Column="1" Grid.Row="1"/>
+                <Label Content="Current Car: " FontSize="16" Grid.Row="2"/>
+                <Label Content="-" x:Name="Lb_Carwash_CurrentCar_4" FontSize="16" Grid.Row="2" Grid.Column="1"/>
+
+                <Label Content="Time Added: " FontSize="16" Grid.Row="3"/>
+                <Label Content="-"  x:Name="Lb_Carwash_TimeAdded_4" FontSize="16" Grid.Row="3" Grid.Column="1"/>
+                <Button x:Name="Btn_Carwash_4_Start" Click="Btn_Carwash_Start_Click" Content="Start" FontWeight="DemiBold" FontSize="14" Grid.Row="4" BorderThickness="2"/>
+                <Button x:Name="Btn_Carwash_4_Sstop" Click="Btn_Carwash_Stop_Click" Content="Stop" FontWeight="DemiBold" FontSize="14" Grid.Row="4" Grid.Column="1" BorderThickness="2" />
+            </Grid>
+        </Border>
+
     </Grid>
 </Window>

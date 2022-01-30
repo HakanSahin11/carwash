@@ -10,7 +10,7 @@ namespace CarwashFront.Helper_Classes
 {
     class APICall
     {
-        public static string SendRequest(string requestType, string json, string api)
+        public static string SendRequest(string requestType, string json, string api, string task)
         {
             try
             {
@@ -24,24 +24,24 @@ namespace CarwashFront.Helper_Classes
                 httpRequest.Accept = "application/json";
                 httpRequest.ContentType = "application/json";
 
-                Crypt crypt = new Crypt();
-                var req = new ApiModel (crypt.Encrypter(json, "13334448853"), TokenId);
-                var msg = JsonConvert.SerializeObject(req);
-
-
-                using (var streamWriter = new StreamWriter(httpRequest.GetRequestStream()))
+                if (json != null)
                 {
+                    Crypt crypt = new Crypt();
+                    var req = new ApiModel(crypt.Encrypter(json, "13334448853"), TokenId, task);
+                    var msg = JsonConvert.SerializeObject(req);
+
+
+                    using var streamWriter = new StreamWriter(httpRequest.GetRequestStream());
                     streamWriter.Write(msg);
                 }
-
                 var httpResponse = (HttpWebResponse)httpRequest.GetResponse();
                 var streamReader = new StreamReader(httpResponse.GetResponseStream());
                 return streamReader.ReadToEnd();
             }
-            catch
+            catch( Exception e)
             {
-                return "Error";
-            }
+                return $"No Connection - {e.Message}";
+            } 
         }
     }
 }

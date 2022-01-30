@@ -24,3 +24,5 @@ C:\Users\Hakan\source\repos\CarwashFront\CarwashFront\bin\Debug\netcoreapp3.1\Ne
 C:\Users\Hakan\source\repos\CarwashFront\CarwashFront\obj\Debug\netcoreapp3.1\CarwashFront.csproj.CopyComplete
 C:\Users\Hakan\source\repos\CarwashFront\CarwashFront\obj\Debug\netcoreapp3.1\CarWashView.g.cs
 C:\Users\Hakan\source\repos\CarwashFront\CarwashFront\obj\Debug\netcoreapp3.1\CarWashView.baml
+C:\Users\Hakan\source\repos\CarwashFront\CarwashFront\obj\Debug\netcoreapp3.1\CreateUser.g.cs
+C:\Users\Hakan\source\repos\CarwashFront\CarwashFront\obj\Debug\netcoreapp3.1\CreateUser.baml

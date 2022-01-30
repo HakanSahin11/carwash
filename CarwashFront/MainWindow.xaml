@@ -50,11 +50,5 @@
             <Button x:Name="BtnSignup" Content="Sign Up" Height="30" Width="200"   Click="BtnSignup_Click"  Grid.Row="8" FontSize="16"/>
 
         </Grid>
-
-        <!--
-        <Button x:Name="btnLogin" Content="Login" Height="30" Width="200" Click="btnLogin_Click"  />
-        <Label Content="Or" FontStyle="Italic" FontSize="12" Foreground="Gray" HorizontalAlignment="Center"/>
-        <Button x:Name="btnSignup" Content="Sign Up" Height="30" Width="200"   Click="btnSignup_Click" />
-        -->
     </Grid>
 </Window>
