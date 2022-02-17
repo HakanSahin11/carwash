@@ -47,9 +47,9 @@ namespace Carwash_API.Controllers
                 Crypt crypt = new Crypt();
                 var DecContent = Task.Run(() => crypt.Decrypter(EncContent.Json, "13334448853")).Result;
                 var content = JsonConvert.DeserializeObject<CarwashRunModel>(DecContent);
-                var id = _user.GetUser(content.UserName).Result.Id;
+                var id = _user.GetUserByEmail(content.UserName).Result.Id;
                 var financial = _financial.GetLoginById(id).Result;
-                var salt = _login.GetUserByUserName(content.UserName).Result.Salt;
+                var salt = _login.GetUser(content.UserName).Result.Salt;
                 var decSub = crypt.Decrypter(financial.Subscription, salt);
 
                 switch (EncContent.Task)
